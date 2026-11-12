@@ -13,7 +13,8 @@ Other files:
 
 - `CNAME`: the custom domain (tapturgames.com).
 - `app-ads.txt`: AdMob's authorised sellers line; the publisher ID comes from the AdMob app IDs in `karaoku/game4` (`config/ads.json`).
-- `404.html`, `robots.txt`, `sitemap.xml`, `favicon.ico`, `apple-touch-icon.png`.
+- `404.html`, `robots.txt`, `sitemap.xml`.
+- Icons from the Taptur Games fox mark: `favicon.ico` (16/32/48, strokes thickened so the small sizes stay legible), `assets/img/favicon-32.png`, `assets/img/favicon-192.png`, `apple-touch-icon.png`, `assets/img/taptur-icon-512.png` (logo in the structured data) and `assets/img/taptur-icon.png` (white on transparent, the studio section).
 - `assets/site.css`: every page's styles. `assets/fonts/`: Special Elite (Apache 2.0) and Courier Prime (OFL), served from the site so no visitor data goes to a font CDN. `assets/img/`: logos, key art and screenshots taken from the game repository (`store/screenshots/tr/google_play`, cropped below the caption band).
 
 ## Store links

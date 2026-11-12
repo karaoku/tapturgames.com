@@ -268,7 +268,7 @@ h2, h3 { font-weight: 400; }
 }
 
 .studio { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: center; }
-.studio img { width: clamp(140px, 20vw, 220px); }
+.studio img { width: clamp(120px, 16vw, 190px); }
 .studio p { margin: 0 0 14px; max-width: 620px; }
 .studio p:last-child { margin-bottom: 0; }
 @media (max-width: 640px) { .studio { grid-template-columns: 1fr; } }
