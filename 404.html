@@ -1,38 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found · Taptur Games</title>
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#0c0b0a">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
-<link rel="icon" href="/assets/img/favicon-192.png" type="image/png" sizes="192x192">
-<link rel="stylesheet" href="/assets/site.css">
-</head>
-<body>
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="/" aria-label="Taptur Games home"><img src="/assets/img/taptur-games.png" alt="Taptur Games" width="480" height="194"></a>
-    <nav class="nav" aria-label="Main">
-      <a href="/#zomnia">Zomnia</a>
-      <a href="/support/">Support</a>
-      <a href="/privacy/">Privacy</a>
-      <a class="lang" href="/tr/" hreflang="tr" lang="tr" title="Türkçe">TR</a>
-    </nav>
-  </div>
-</header>
-<main class="wrap notfound">
+---
+title: Page not found
+permalink: /404.html
+noindex: true
+---
+{%- assign t = site.data.t[page.lang] -%}
+<section class="container notfound">
   <div>
-    <img src="/assets/img/zomnia-zombie.png" alt="" width="275" height="256">
-    <h1 class="stripe">Nothing left here</h1>
-    <p>This page has been looted, or it never existed. <span lang="tr">Bu sayfa yağmalanmış ya da hiç var olmamış.</span></p>
-    <div class="row">
-      <a class="btn" href="/">Home</a>
+    <img src="/assets/img/taptur-icon.png" alt="" width="400" height="400">
+    <p class="eyebrow">404</p>
+    <h1 class="title">This page doesn’t exist.</h1>
+    <p class="lead">It may have moved, or the link was mistyped. <span lang="tr">Bu sayfa yok; taşınmış ya da bağlantı yanlış yazılmış olabilir.</span></p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="/">Home {% include icon.html name="arrow" %}</a>
       <a class="btn btn--ghost" href="/tr/" lang="tr">Ana sayfa</a>
     </div>
   </div>
-</main>
-</body>
-</html>
+</section>

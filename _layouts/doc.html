@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{%- assign t = site.data.t[page.lang] -%}
+<section class="page-hero">
+  <div class="container">
+    {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+    <h1 class="title">{{ page.heading | default: page.title }}</h1>
+    {% if page.meta %}<p class="meta">{{ page.meta }}</p>{% endif %}
+  </div>
+</section>
+<div class="container doc">
+  <nav class="doc-nav" aria-label="{{ t.help_title }}">
+    <p>{{ t.help_title }}</p>
+    <ul>
+      <li><a href="{{ t.links.support }}"{% if page.nav == 'support' %} aria-current="page"{% endif %}>{{ t.footer.support }}</a></li>
+      <li><a href="{{ t.links.privacy }}"{% if page.nav == 'privacy' %} aria-current="page"{% endif %}>{{ t.footer.privacy }}</a></li>
+      <li><a href="{{ t.links.delete }}"{% if page.nav == 'delete' %} aria-current="page"{% endif %}>{{ t.footer.delete }}</a></li>
+    </ul>
+  </nav>
+  <article class="prose">
+{{ content }}
+  </article>
+</div>

@@ -1,0 +1,59 @@
+# Interface words, by language. Page text lives in the pages themselves.
+en:
+  locale: en_US
+  other_lang: tr
+  other_home: /tr/
+  switch_code: TR
+  switch_label: Türkçe
+  skip: Skip to content
+  home_label: Taptur Games home
+  menu: Menu
+  main_nav: Main
+  nav: { games: Games, studio: Studio, support: Support }
+  contact: Contact
+  links:
+    home: /
+    games: /#games
+    studio: /#studio
+    contact: /#contact
+    support: /support/
+    privacy: /privacy/
+    delete: /delete-account/
+  footer_tagline: An independent studio making games for Android and iOS.
+  footer: { games: Games, company: Company, help: Help, studio: Studio, contact: Contact, support: Support, privacy: Privacy policy, delete: Delete account }
+  rights: All rights reserved.
+  help_title: Help center
+  soon: Coming soon
+  get_it_on: Get it on
+  download_on: Download on the
+  prev: Previous
+  next: Next
+tr:
+  locale: tr_TR
+  other_lang: en
+  other_home: /
+  switch_code: EN
+  switch_label: English
+  skip: İçeriğe geç
+  home_label: Taptur Games ana sayfa
+  menu: Menü
+  main_nav: Ana menü
+  nav: { games: Oyunlar, studio: Stüdyo, support: Destek }
+  contact: İletişim
+  links:
+    home: /tr/
+    games: /tr/#oyunlar
+    studio: /tr/#studyo
+    contact: /tr/#iletisim
+    support: /tr/destek/
+    privacy: /tr/gizlilik/
+    delete: /tr/hesap-silme/
+  footer_tagline: Android ve iOS için oyunlar yapan bağımsız bir stüdyo.
+  footer: { games: Oyunlar, company: Şirket, help: Yardım, studio: Stüdyo, contact: İletişim, support: Destek, privacy: Gizlilik politikası, delete: Hesap silme }
+  rights: Tüm hakları saklıdır.
+  help_title: Yardım merkezi
+  soon: Yakında
+  get_it_on: Hemen indir
+  download_on: İndir
+  prev: Önceki
+  next: Sonraki

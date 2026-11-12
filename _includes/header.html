@@ -1,0 +1,23 @@
+{%- assign t = site.data.t[page.lang] -%}
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{ t.links.home }}" aria-label="{{ t.home_label }}">
+      <img src="/assets/img/taptur-icon.png" alt="" width="34" height="34">
+      <span>Taptur Games</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="{{ t.menu }}">
+      {% include icon.html name="menu" class="open" %}{% include icon.html name="close" class="close" %}
+    </button>
+    <div class="nav-wrap" id="site-nav">
+      <nav class="nav" aria-label="{{ t.main_nav }}">
+        <a href="{{ t.links.games }}"{% if page.nav == 'games' %} aria-current="page"{% endif %}>{{ t.nav.games }}</a>
+        <a href="{{ t.links.studio }}">{{ t.nav.studio }}</a>
+        <a href="{{ t.links.support }}"{% if page.nav == 'support' %} aria-current="page"{% endif %}>{{ t.nav.support }}</a>
+      </nav>
+      <div class="header-actions">
+        <a class="lang-switch" href="{{ page.alt | default: t.other_home }}" hreflang="{{ t.other_lang }}" lang="{{ t.other_lang }}" title="{{ t.switch_label }}">{% include icon.html name="globe" %}{{ t.switch_code }}</a>
+        <a class="btn btn--ghost btn--sm" href="{{ t.links.contact }}">{{ t.contact }}</a>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,21 @@
+# Every game the studio shows, newest first. A game's page lives at url.en and url.tr
+# (see games/zomnia/index.html). When a store page goes live, add its link as play: / appstore:.
+- id: zomnia
+  name: Zomnia
+  logo: /assets/img/zomnia-word.png
+  logo_w: 510
+  logo_h: 128
+  art: /assets/img/keyart-1200.webp
+  art_s: /assets/img/keyart-640.webp
+  platforms: [Android, iOS]
+  play:
+  appstore:
+  url: { en: /games/zomnia/, tr: /tr/oyunlar/zomnia/ }
+  status: { en: Coming soon, tr: Yakında }
+  genre: { en: Zombie survival, tr: Zombi hayatta kalma }
+  blurb:
+    en: An isometric zombie survival game played one day at a time. Search the houses, fight the dead and get home before dark.
+    tr: Her gün bir gün oynanan izometrik bir zombi hayatta kalma oyunu. Evleri ara, ölülerle savaş ve karanlık çökmeden eve dön.
+  art_alt:
+    en: A zombie in a torn jacket reaching out on a dark suburban street
+    tr: Karanlık bir banliyö sokağında elini uzatan, yırtık ceketli bir zombi

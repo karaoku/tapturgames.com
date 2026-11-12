@@ -1,0 +1,18 @@
+# tapturgames.com — built by GitHub Pages (Jekyll 3.10).
+title: Taptur Games
+url: "https://tapturgames.com"
+baseurl: ""
+email: support@tapturgames.com
+markdown: kramdown
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: default, lang: en }
+  - scope: { path: "tr" }
+    values: { lang: tr }

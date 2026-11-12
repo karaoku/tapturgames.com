@@ -1,41 +1,50 @@
 # tapturgames.com
 
-Taptur Games' website, served by GitHub Pages from the root of `main`. Plain HTML and CSS, no build step.
+Taptur Games' website. GitHub Pages builds it with Jekyll from the root of `main` on every push; there is nothing to build by hand.
+
+## Pages
 
 | Page | English | Türkçe |
 |---|---|---|
-| Home (Zomnia) | `/` | `/tr/` |
+| Studio home | `/` | `/tr/` |
+| Zomnia | `/games/zomnia/` | `/tr/oyunlar/zomnia/` |
 | Support | `/support/` | `/tr/destek/` |
 | Privacy policy | `/privacy/` | `/tr/gizlilik/` |
 | Account deletion | `/delete-account/` | `/tr/hesap-silme/` |
 
-Other files:
+Store links: privacy policy `https://tapturgames.com/privacy/`, account deletion (Google Play) `https://tapturgames.com/delete-account/`, support (App Store) `https://tapturgames.com/support/`.
 
-- `CNAME`: the custom domain (tapturgames.com).
-- `app-ads.txt`: AdMob's authorised sellers line; the publisher ID comes from the AdMob app IDs in `karaoku/game4` (`config/ads.json`).
-- `404.html`, `robots.txt`, `sitemap.xml`.
-- Icons from the Taptur Games fox mark: `favicon.ico` (16/32/48, strokes thickened so the small sizes stay legible), `assets/img/favicon-32.png`, `assets/img/favicon-192.png`, `apple-touch-icon.png`, `assets/img/taptur-icon-512.png` (logo in the structured data) and `assets/img/taptur-icon.png` (white on transparent, the studio section).
-- `assets/site.css`: every page's styles. `assets/fonts/`: Special Elite (Apache 2.0) and Courier Prime (OFL), served from the site so no visitor data goes to a font CDN. `assets/img/`: logos, key art and screenshots taken from the game repository (`store/screenshots/tr/google_play`, cropped below the caption band).
+## How it is put together
 
-## Store links
+- `_config.yml`: site settings, including `email` (the contact address used on every page).
+- `_data/games.yml`: the games shown on the home page, in the footer and in each game page's header (name, logo, art, status, genre, platforms, store links).
+- `_data/t.yml`: interface words (menu, footer, buttons) in English and Turkish.
+- `_layouts/default.html`: every page's frame (`_includes/head.html`, `header.html`, `footer.html`).
+- `_layouts/game.html`: a game page's header, from `_data/games.yml`; the page itself adds the rest.
+- `_layouts/doc.html`: support, privacy and deletion pages, with the help-center side menu.
+- `assets/css/site.css`: all styles. Colours, fonts and spacing are the variables at the top (`--accent` is the orange).
+- `assets/fonts/`: Archivo (headings) and Inter (text), both SIL OFL, served from the site.
+- `assets/img/`: the fox mark (`taptur-icon*.png`), share images (`og-*.jpg`), Zomnia's art, logo and screenshots.
+- `CNAME` (the domain), `app-ads.txt` (AdMob), `robots.txt`, `sitemap.xml` (made from the pages), `404.html`.
 
-- Privacy policy URL: https://tapturgames.com/privacy/
-- Account deletion URL (Google Play): https://tapturgames.com/delete-account/
-- Support URL (App Store): https://tapturgames.com/support/
-- Marketing / developer website: https://tapturgames.com/
+Each page's front matter sets its `title`, `description` and `alt` (the same page in the other language).
 
-## Editing
+## Adding a game
 
-Each page has its own header and footer, so a change to the menu or footer goes into every `index.html`. The contact address appears as `support@tapturgames.com` in all pages:
+1. Add an entry to `_data/games.yml` (copy Zomnia's). Put its art and logo in `assets/img/`.
+2. Copy `games/zomnia/index.html` to `games/<id>/index.html` and `tr/oyunlar/zomnia/index.html` to `tr/oyunlar/<id>/index.html`, then change `game:`, the text and the screenshots.
+3. When it is in the stores, fill in `play:` and `appstore:` in `_data/games.yml`; the buttons on its page turn into links.
+
+The home page lists every game in `_data/games.yml`. Its "Next game" card can go once there is more than one.
+
+## Preview locally
 
 ```bash
-grep -rl "support@tapturgames.com" --include=*.html .
+gem install jekyll -v 3.10.0 kramdown-parser-gfm webrick
 ```
-
-When the privacy policy changes, update the date at the top of both `privacy/index.html` and `tr/gizlilik/index.html`.
-
-To preview locally:
 
 ```bash
-python3 -m http.server 8000
+jekyll serve
 ```
+
+Then open http://localhost:4000.

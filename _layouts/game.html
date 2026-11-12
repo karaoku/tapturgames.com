@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{%- assign t = site.data.t[page.lang] -%}
+{%- assign g = site.data.games | where: "id", page.game | first -%}
+<section class="game-hero">
+  <div class="container">
+    <div>
+      <ol class="crumbs">
+        <li><a href="{{ t.links.games }}">{{ t.nav.games }}</a></li>
+        <li aria-current="page">{{ g.name }}</li>
+      </ol>
+      <h1><img class="game-hero__logo" src="{{ g.logo }}" alt="{{ g.name }}" width="{{ g.logo_w }}" height="{{ g.logo_h }}"></h1>
+      <p class="tagline">{{ page.tagline }}</p>
+      <p class="lead">{{ g.blurb[page.lang] }}</p>
+      <ul class="chips">
+        <li class="chip chip--accent">{{ g.status[page.lang] }}</li>
+        <li class="chip">{{ g.genre[page.lang] }}</li>
+        {% for p in g.platforms %}<li class="chip">{{ p }}</li>{% endfor %}
+      </ul>
+      <div class="btn-row">
+        {% if g.play %}<a class="store" href="{{ g.play }}">{% include icon.html name="play" %}<span><small>{{ t.get_it_on }}</small><strong>Google Play</strong></span></a>
+        {% else %}<span class="store" aria-disabled="true">{% include icon.html name="play" %}<span><small>{{ t.soon }}</small><strong>Google Play</strong></span></span>{% endif %}
+        {% if g.appstore %}<a class="store" href="{{ g.appstore }}">{% include icon.html name="phone" %}<span><small>{{ t.download_on }}</small><strong>App Store</strong></span></a>
+        {% else %}<span class="store" aria-disabled="true">{% include icon.html name="phone" %}<span><small>{{ t.soon }}</small><strong>App Store</strong></span></span>{% endif %}
+      </div>
+    </div>
+    <div class="game-hero__art">
+      <img src="{{ g.art }}" srcset="{{ g.art_s }} 640w, {{ g.art }} 1200w" sizes="(max-width: 860px) 100vw, 560px" alt="{{ g.art_alt[page.lang] }}" width="1200" height="1200" fetchpriority="high">
+    </div>
+  </div>
+</section>
+{{ content }}

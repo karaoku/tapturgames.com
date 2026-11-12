@@ -1,0 +1,38 @@
+{%- assign t = site.data.t[page.lang] -%}
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="{{ t.links.home }}" aria-label="{{ t.home_label }}">
+          <img src="/assets/img/taptur-icon.png" alt="" width="34" height="34" loading="lazy">
+          <span>Taptur Games</span>
+        </a>
+        <p>{{ t.footer_tagline }}</p>
+      </div>
+      <div class="footer-col">
+        <h2>{{ t.footer.games }}</h2>
+        <ul>{% for g in site.data.games %}<li><a href="{{ g.url[page.lang] }}">{{ g.name }}</a></li>{% endfor %}</ul>
+      </div>
+      <div class="footer-col">
+        <h2>{{ t.footer.company }}</h2>
+        <ul>
+          <li><a href="{{ t.links.studio }}">{{ t.footer.studio }}</a></li>
+          <li><a href="{{ t.links.contact }}">{{ t.footer.contact }}</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2>{{ t.footer.help }}</h2>
+        <ul>
+          <li><a href="{{ t.links.support }}">{{ t.footer.support }}</a></li>
+          <li><a href="{{ t.links.privacy }}">{{ t.footer.privacy }}</a></li>
+          <li><a href="{{ t.links.delete }}">{{ t.footer.delete }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {{ site.time | date: "%Y" }} Taptur Games. {{ t.rights }}</span>
+      <a href="{{ page.alt | default: t.other_home }}" hreflang="{{ t.other_lang }}" lang="{{ t.other_lang }}">{{ t.switch_label }}</a>
+    </div>
+  </div>
+</footer>

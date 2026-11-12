@@ -1,11 +1,15 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://tapturgames.com/</loc><xhtml:link rel="alternate" hreflang="tr" href="https://tapturgames.com/tr/"/><xhtml:link rel="alternate" hreflang="en" href="https://tapturgames.com/"/></url>
-  <url><loc>https://tapturgames.com/tr/</loc><xhtml:link rel="alternate" hreflang="tr" href="https://tapturgames.com/tr/"/><xhtml:link rel="alternate" hreflang="en" href="https://tapturgames.com/"/></url>
-  <url><loc>https://tapturgames.com/support/</loc><xhtml:link rel="alternate" hreflang="tr" href="https://tapturgames.com/tr/destek/"/><xhtml:link rel="alternate" hreflang="en" href="https://tapturgames.com/support/"/></url>
-  <url><loc>https://tapturgames.com/tr/destek/</loc><xhtml:link rel="alternate" hreflang="tr" href="https://tapturgames.com/tr/destek/"/><xhtml:link rel="alternate" hreflang="en" href="https://tapturgames.com/support/"/></url>
-  <url><loc>https://tapturgames.com/privacy/</loc><xhtml:link rel="alternate" hreflang="tr" href="https://tapturgames.com/tr/gizlilik/"/><xhtml:link rel="alternate" hreflang="en" href="https://tapturgames.com/privacy/"/></url>
-  <url><loc>https://tapturgames.com/tr/gizlilik/</loc><xhtml:link rel="alternate" hreflang="tr" href="https://tapturgames.com/tr/gizlilik/"/><xhtml:link rel="alternate" hreflang="en" href="https://tapturgames.com/privacy/"/></url>
-  <url><loc>https://tapturgames.com/delete-account/</loc><xhtml:link rel="alternate" hreflang="tr" href="https://tapturgames.com/tr/hesap-silme/"/><xhtml:link rel="alternate" hreflang="en" href="https://tapturgames.com/delete-account/"/></url>
-  <url><loc>https://tapturgames.com/tr/hesap-silme/</loc><xhtml:link rel="alternate" hreflang="tr" href="https://tapturgames.com/tr/hesap-silme/"/><xhtml:link rel="alternate" hreflang="en" href="https://tapturgames.com/delete-account/"/></url>
+{%- for p in site.html_pages %}{% unless p.noindex %}
+  <url>
+    <loc>{{ site.url }}{{ p.url }}</loc>
+    {%- if p.alt %}
+    <xhtml:link rel="alternate" hreflang="{{ p.lang }}" href="{{ site.url }}{{ p.url }}"/>
+    <xhtml:link rel="alternate" hreflang="{% if p.lang == 'en' %}tr{% else %}en{% endif %}" href="{{ site.url }}{{ p.alt }}"/>
+    {%- endif %}
+  </url>
+{%- endunless %}{% endfor %}
 </urlset>

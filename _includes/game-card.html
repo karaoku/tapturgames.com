@@ -1,0 +1,15 @@
+{%- assign t = site.data.t[page.lang] -%}
+{%- assign g = include.game -%}
+<a class="game-card" href="{{ g.url[page.lang] }}">
+  <img class="game-card__art" src="{{ g.art }}" srcset="{{ g.art_s }} 640w, {{ g.art }} 1200w" sizes="(max-width: 960px) 100vw, 560px" alt="" width="1200" height="1200" loading="lazy">
+  <div class="game-card__body">
+    <ul class="chips">
+      <li class="chip chip--accent">{{ g.status[page.lang] }}</li>
+      <li class="chip">{{ g.genre[page.lang] }}</li>
+      <li class="chip">{{ g.platforms | join: " · " }}</li>
+    </ul>
+    <img class="game-card__logo" src="{{ g.logo }}" alt="{{ g.name }}" width="{{ g.logo_w }}" height="{{ g.logo_h }}" loading="lazy">
+    <p>{{ g.blurb[page.lang] }}</p>
+    <span class="link-arrow">{% if page.lang == 'tr' %}Oyunu incele{% else %}Discover {{ g.name }}{% endif %} {% include icon.html name="arrow" %}</span>
+  </div>
+</a>
