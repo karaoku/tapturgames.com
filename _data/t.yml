@@ -19,8 +19,9 @@ en:
     support: /support/
     privacy: /privacy/
     delete: /delete-account/
+    terms: /terms
   footer_tagline: An independent studio making games for Android and iOS.
-  footer: { games: Games, company: Company, help: Help, studio: Studio, contact: Contact, support: Support, privacy: Privacy policy, delete: Delete account }
+  footer: { games: Games, company: Company, help: Help, studio: Studio, contact: Contact, support: Support, privacy: Privacy policy, terms: Terms of Service, delete: Delete account }
   rights: All rights reserved.
   help_title: Help center
   soon: Coming soon
@@ -48,8 +49,9 @@ tr:
     support: /tr/destek/
     privacy: /tr/gizlilik/
     delete: /tr/hesap-silme/
+    terms: /tr/hizmet-sartlari
   footer_tagline: Android ve iOS için oyunlar yapan bağımsız bir stüdyo.
-  footer: { games: Oyunlar, company: Şirket, help: Yardım, studio: Stüdyo, contact: İletişim, support: Destek, privacy: Gizlilik politikası, delete: Hesap silme }
+  footer: { games: Oyunlar, company: Şirket, help: Yardım, studio: Stüdyo, contact: İletişim, support: Destek, privacy: Gizlilik politikası, terms: Hizmet Şartları, delete: Hesap silme }
   rights: Tüm hakları saklıdır.
   help_title: Yardım merkezi
   soon: Yakında

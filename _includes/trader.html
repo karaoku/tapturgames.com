@@ -1,0 +1,20 @@
+{%- assign c = site.company -%}
+{%- if page.lang == 'tr' -%}
+  {%- assign l_trader = "Tacir" -%}{%- assign l_brand = "Marka" -%}{%- assign l_address = "Adres" -%}{%- assign l_phone = "Telefon" -%}{%- assign l_email = "E-posta" -%}{%- assign l_registry = "Sicil / MERSİS" -%}{%- assign l_tax = "Vergi dairesi ve no" -%}{%- assign l_web = "Web sitesi" -%}
+{%- else -%}
+  {%- assign l_trader = "Trader" -%}{%- assign l_brand = "Trading as" -%}{%- assign l_address = "Address" -%}{%- assign l_phone = "Phone" -%}{%- assign l_email = "Email" -%}{%- assign l_registry = "Registration" -%}{%- assign l_tax = "Tax number" -%}{%- assign l_web = "Website" -%}
+{%- endif -%}
+<div class="table-wrap">
+  <table>
+    <tbody>
+      <tr><td>{{ l_trader }}</td><td>{{ c.legal_name | default: c.name }}</td></tr>
+      {% if c.legal_name %}<tr><td>{{ l_brand }}</td><td>{{ c.name }}</td></tr>{% endif %}
+      {% if c.address %}<tr><td>{{ l_address }}</td><td>{{ c.address }}</td></tr>{% endif %}
+      {% if c.phone %}<tr><td>{{ l_phone }}</td><td><a href="tel:{{ c.phone | remove: ' ' }}">{{ c.phone }}</a></td></tr>{% endif %}
+      <tr><td>{{ l_email }}</td><td><a href="mailto:{{ site.email }}">{{ site.email }}</a></td></tr>
+      {% if c.registry %}<tr><td>{{ l_registry }}</td><td>{{ c.registry }}</td></tr>{% endif %}
+      {% if c.tax_id %}<tr><td>{{ l_tax }}</td><td>{{ c.tax_id }}</td></tr>{% endif %}
+      <tr><td>{{ l_web }}</td><td><a href="{{ site.url }}/">tapturgames.com</a></td></tr>
+    </tbody>
+  </table>
+</div>

@@ -3,6 +3,17 @@ title: Taptur Games
 url: "https://tapturgames.com"
 baseurl: ""
 email: support@tapturgames.com
+
+# Who offers the games: shown under "Trader information" on /terms and /tr/hizmet-sartlari.
+# Fill these with the same details as the Play Console and App Store Connect trader declarations.
+# Empty fields are left out of the page.
+company:
+  name: Taptur Games
+  legal_name:        # e.g. the registered company name, or your full name for a sole proprietorship
+  address:           # registered address, one line
+  phone:             # with country code, e.g. +90 ...
+  registry:          # trade registry / MERSİS number, if any
+  tax_id:            # tax office and number, if any
 markdown: kramdown
 
 exclude:

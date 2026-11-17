@@ -10,18 +10,19 @@ Taptur Games' website. GitHub Pages builds it with Jekyll from the root of `main
 | Zomnia | `/games/zomnia/` | `/tr/oyunlar/zomnia/` |
 | Support | `/support/` | `/tr/destek/` |
 | Privacy policy | `/privacy/` | `/tr/gizlilik/` |
+| Terms of Service | `/terms` | `/tr/hizmet-sartlari` |
 | Account deletion | `/delete-account/` | `/tr/hesap-silme/` |
 
-Store links: privacy policy `https://tapturgames.com/privacy/`, account deletion (Google Play) `https://tapturgames.com/delete-account/`, support (App Store) `https://tapturgames.com/support/`.
+Store links: privacy policy `https://tapturgames.com/privacy/`, terms of service (Play Console's per-app trader status, App Store EULA field if wanted) `https://tapturgames.com/terms`, account deletion (Google Play) `https://tapturgames.com/delete-account/`, support (App Store) `https://tapturgames.com/support/`.
 
 ## How it is put together
 
-- `_config.yml`: site settings, including `email` (the contact address used on every page).
+- `_config.yml`: site settings, including `email` (the contact address used on every page) and `company` (the trader details shown in the Terms of Service; empty fields are left out).
 - `_data/games.yml`: the games shown on the home page, in the footer and in each game page's header (name, logo, art, status, genre, platforms, store links).
 - `_data/t.yml`: interface words (menu, footer, buttons) in English and Turkish.
 - `_layouts/default.html`: every page's frame (`_includes/head.html`, `header.html`, `footer.html`).
 - `_layouts/game.html`: a game page's header, from `_data/games.yml`; the page itself adds the rest.
-- `_layouts/doc.html`: support, privacy and deletion pages, with the help-center side menu.
+- `_layouts/doc.html`: support, privacy, terms and deletion pages, with the help-center side menu. `_includes/trader.html` is the trader table on the terms pages.
 - `assets/css/site.css`: all styles. Colours, fonts and spacing are the variables at the top (`--accent` is the orange).
 - `assets/fonts/`: Archivo (headings) and Inter (text), both SIL OFL, served from the site.
 - `assets/img/`: the fox mark (`taptur-icon*.png`), share images (`og-*.jpg`), Zomnia's art, logo and screenshots.
